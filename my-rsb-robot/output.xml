@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.7.5 on win32)" generated="20211213 09:43:59.336" rpa="false" schemaversion="2">
+<suite id="s1" name="Robot Interactive Console" source="c:\Users\JKU059\.vscode\extensions\robocorp.robotframework-lsp-0.32.0\src\robotframework_ls\vendored\robotframework_interactive\robot_interactive_console.robot">
+<test id="s1-t1" name="Default Task/Test">
+<kw name="Interpreter Main Loop" library="MainLoop">
+<kw name="Input Text" library="RPA.Browser.Selenium">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20211213 09:56:44.513" level="FAIL">Keyword 'RPA.Browser.Selenium.Input Text' expected 2 to 3 arguments, got 0.</msg>
+<status status="FAIL" starttime="20211213 09:56:44.512" endtime="20211213 09:56:44.513"/>
+</kw>
+<status status="PASS" starttime="20211213 09:43:59.373" endtime="20211213 13:21:56.812"/>
+</kw>
+<status status="PASS" starttime="20211213 09:43:59.373" endtime="20211213 13:21:56.824"/>
+</test>
+<status status="PASS" starttime="20211213 09:43:59.339" endtime="20211213 13:21:56.859"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Robot Interactive Console">Robot Interactive Console</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
