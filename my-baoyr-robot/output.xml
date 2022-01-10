@@ -1,54 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.2 (Python 3.7.5 on win32)" generated="20211221 10:07:10.822" rpa="false" schemaversion="2">
-<suite id="s1" name="Robot Interactive Console" source="c:\Users\JKU059\.vscode\extensions\robocorp.robotframework-lsp-0.34.0\src\robotframework_ls\vendored\robotframework_interactive\robot_interactive_console.robot">
-<test id="s1-t1" name="Default Task/Test">
-<kw name="Interpreter Main Loop" library="MainLoop">
+<robot generator="Robot 4.1.2 (Python 3.7.5 on win32)" generated="20220110 14:09:41.460" rpa="true" schemaversion="2">
+<suite id="s1" name="Tasks" source="c:\Users\JKU059\OneDrive - Wärtsilä Corporation\Documents\Robocorp_Janne\my-baoyr-robot\tasks.robot">
+<test id="s1-t1" name="Order robots from RobotSpareBin Industries Inc">
+<kw name="Check who runs">
+<kw name="Add heading" library="RPA.Dialogs">
+<arg>Welcome to Bot order</arg>
+<doc>Add a centered heading text element</doc>
+<status status="PASS" starttime="20220110 14:09:43.154" endtime="20220110 14:09:43.155"/>
+</kw>
+<kw name="Add text input" library="RPA.Dialogs">
+<arg>who</arg>
+<arg>label=Who is placing an order?</arg>
+<arg>placeholder=Type your name here, please</arg>
+<tag>input</tag>
+<doc>Add a text input element</doc>
+<status status="PASS" starttime="20220110 14:09:43.155" endtime="20220110 14:09:43.156"/>
+</kw>
+<kw name="Run dialog" library="RPA.Dialogs">
+<var>${result}</var>
+<tag>dialog</tag>
+<doc>Create a dialog from all the defined elements and block
+until the user has handled it.</doc>
+<msg timestamp="20220110 14:09:43.157" level="INFO">Protecting keyword: RPA.Dialogs.Run dialog</msg>
+<msg timestamp="20220110 14:09:51.543" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220110 14:09:43.156" endtime="20220110 14:09:51.543"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${result.who} has requested a new batch of bots! Way to go ${result.who}!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220110 14:09:51.543" endtime="20220110 14:09:51.545"/>
+</kw>
+<status status="PASS" starttime="20220110 14:09:43.153" endtime="20220110 14:09:51.546"/>
+</kw>
+<kw name="Open order webpage">
+<kw name="Get Secret" library="RPA.Robocorp.Vault">
+<var>${roboturl}</var>
+<arg>targetURL</arg>
+<doc>Read a secret from the configured source, e.g. Robocorp Vault,
+and return it as a ``Secret`` object.</doc>
+<msg timestamp="20220110 14:09:51.547" level="INFO">Protecting keyword: RPA.Robocorp.Vault.Get Secret</msg>
+<msg timestamp="20220110 14:09:51.552" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="FAIL" starttime="20220110 14:09:51.547" endtime="20220110 14:09:51.551"/>
+</kw>
+<kw name="Open Available Browser" library="RPA.Browser.Selenium">
+<arg>${roboturl}[orderURL]</arg>
+<doc>Attempts to open a browser on the user's device from a set of
+supported browsers. Automatically downloads a corresponding webdriver
+if none is already installed.</doc>
+<status status="NOT RUN" starttime="20220110 14:09:51.553" endtime="20220110 14:09:51.554"/>
+</kw>
+<status status="FAIL" starttime="20220110 14:09:51.546" endtime="20220110 14:09:51.555"/>
+</kw>
+<kw name="Get orders">
+<var>${orders}</var>
+<status status="NOT RUN" starttime="20220110 14:09:51.557" endtime="20220110 14:09:51.557"/>
+</kw>
+<for flavor="IN">
+<var>${row}</var>
+<value>@{orders}</value>
+<iter>
+<var name="${row}">${row}</var>
+<kw name="Close POPUP">
+<status status="NOT RUN" starttime="20220110 14:09:51.561" endtime="20220110 14:09:51.561"/>
+</kw>
 <kw name="Process an order">
-<kw name="Click Button When Visible">
-<arg>OK</arg>
-<msg timestamp="20211221 10:07:29.843" level="FAIL">No keyword with name 'Click Button When Visible' found.</msg>
-<status status="FAIL" starttime="20211221 10:07:29.843" endtime="20211221 10:07:29.843"/>
+<arg>${row}</arg>
+<status status="NOT RUN" starttime="20220110 14:09:51.561" endtime="20220110 14:09:51.562"/>
 </kw>
-<kw name="Select From List By Value">
-<arg>id:head</arg>
-<arg>2</arg>
-<status status="NOT RUN" starttime="20211221 10:07:29.845" endtime="20211221 10:07:29.845"/>
+<kw name="Save receipt">
+<var>${receipt}</var>
+<arg>${row}</arg>
+<status status="NOT RUN" starttime="20220110 14:09:51.562" endtime="20220110 14:09:51.562"/>
 </kw>
-<kw name="Select Radio Button">
-<arg>2. Body:</arg>
-<arg>1</arg>
-<status status="NOT RUN" starttime="20211221 10:07:29.846" endtime="20211221 10:07:29.846"/>
+<kw name="Save picture">
+<var>${bot}</var>
+<arg>${row}</arg>
+<status status="NOT RUN" starttime="20220110 14:09:51.562" endtime="20220110 14:09:51.563"/>
 </kw>
-<kw name="Input Text">
-<arg>placeholder:"Enter the part number for the legs"</arg>
-<arg>4</arg>
-<status status="NOT RUN" starttime="20211221 10:07:29.848" endtime="20211221 10:07:29.848"/>
+<kw name="FinalizePDF">
+<arg>${receipt}</arg>
+<arg>${bot}</arg>
+<status status="NOT RUN" starttime="20220110 14:09:51.563" endtime="20220110 14:09:51.563"/>
 </kw>
-<kw name="Input Text">
-<arg>id:address</arg>
-<arg>osoite</arg>
-<status status="NOT RUN" starttime="20211221 10:07:29.849" endtime="20211221 10:07:29.849"/>
+<kw name="Order new">
+<status status="NOT RUN" starttime="20220110 14:09:51.563" endtime="20220110 14:09:51.563"/>
 </kw>
-<kw name="Click Button">
-<arg>id:preview</arg>
-<status status="NOT RUN" starttime="20211221 10:07:29.850" endtime="20211221 10:07:29.850"/>
+<status status="NOT RUN" starttime="20220110 14:09:51.560" endtime="20220110 14:09:51.564"/>
+</iter>
+<status status="NOT RUN" starttime="20220110 14:09:51.559" endtime="20220110 14:09:51.564"/>
+</for>
+<kw name="Zip Up">
+<status status="NOT RUN" starttime="20220110 14:09:51.565" endtime="20220110 14:09:51.565"/>
 </kw>
-<status status="FAIL" starttime="20211221 10:07:29.841" endtime="20211221 10:07:29.851"/>
+<kw name="Close the browser" type="TEARDOWN">
+<kw name="Close Browser" library="RPA.Browser.Selenium">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220110 14:09:51.568" endtime="20220110 14:09:51.569"/>
 </kw>
-<status status="PASS" starttime="20211221 10:07:10.876" endtime="20211221 10:08:47.381"/>
+<status status="PASS" starttime="20220110 14:09:51.566" endtime="20220110 14:09:51.570"/>
 </kw>
-<status status="PASS" starttime="20211221 10:07:10.876" endtime="20211221 10:08:47.381"/>
+<status status="FAIL" starttime="20220110 14:09:43.152" endtime="20220110 14:09:51.571">KeyError: 'Missing required environment variable: RC_API_SECRET_HOST'</status>
 </test>
-<status status="PASS" starttime="20211221 10:07:10.826" endtime="20211221 10:08:47.383"/>
+<doc>Orders new robots from RobotSpareBin Industries Inc.
+Saves bots details from receipt and screenshot of the bot to a PDF.
+Creates ZIP file of all receipts</doc>
+<status status="FAIL" starttime="20220110 14:09:41.463" endtime="20220110 14:09:51.579"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="1" skip="0">All Tasks</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Robot Interactive Console">Robot Interactive Console</stat>
+<stat pass="0" fail="1" skip="0" id="s1" name="Tasks">Tasks</stat>
 </suite>
 </statistics>
 <errors>
