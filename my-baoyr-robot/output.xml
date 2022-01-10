@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.7.5 on win32)" generated="20211221 10:07:10.822" rpa="false" schemaversion="2">
+<suite id="s1" name="Robot Interactive Console" source="c:\Users\JKU059\.vscode\extensions\robocorp.robotframework-lsp-0.34.0\src\robotframework_ls\vendored\robotframework_interactive\robot_interactive_console.robot">
+<test id="s1-t1" name="Default Task/Test">
+<kw name="Interpreter Main Loop" library="MainLoop">
+<kw name="Process an order">
+<kw name="Click Button When Visible">
+<arg>OK</arg>
+<msg timestamp="20211221 10:07:29.843" level="FAIL">No keyword with name 'Click Button When Visible' found.</msg>
+<status status="FAIL" starttime="20211221 10:07:29.843" endtime="20211221 10:07:29.843"/>
+</kw>
+<kw name="Select From List By Value">
+<arg>id:head</arg>
+<arg>2</arg>
+<status status="NOT RUN" starttime="20211221 10:07:29.845" endtime="20211221 10:07:29.845"/>
+</kw>
+<kw name="Select Radio Button">
+<arg>2. Body:</arg>
+<arg>1</arg>
+<status status="NOT RUN" starttime="20211221 10:07:29.846" endtime="20211221 10:07:29.846"/>
+</kw>
+<kw name="Input Text">
+<arg>placeholder:"Enter the part number for the legs"</arg>
+<arg>4</arg>
+<status status="NOT RUN" starttime="20211221 10:07:29.848" endtime="20211221 10:07:29.848"/>
+</kw>
+<kw name="Input Text">
+<arg>id:address</arg>
+<arg>osoite</arg>
+<status status="NOT RUN" starttime="20211221 10:07:29.849" endtime="20211221 10:07:29.849"/>
+</kw>
+<kw name="Click Button">
+<arg>id:preview</arg>
+<status status="NOT RUN" starttime="20211221 10:07:29.850" endtime="20211221 10:07:29.850"/>
+</kw>
+<status status="FAIL" starttime="20211221 10:07:29.841" endtime="20211221 10:07:29.851"/>
+</kw>
+<status status="PASS" starttime="20211221 10:07:10.876" endtime="20211221 10:08:47.381"/>
+</kw>
+<status status="PASS" starttime="20211221 10:07:10.876" endtime="20211221 10:08:47.381"/>
+</test>
+<status status="PASS" starttime="20211221 10:07:10.826" endtime="20211221 10:08:47.383"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Robot Interactive Console">Robot Interactive Console</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
